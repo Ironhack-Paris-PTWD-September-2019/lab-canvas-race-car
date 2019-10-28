@@ -91,6 +91,7 @@ document.onkeydown = function (e) {
   }
 }
 
+let raf;
 let frames = 0;
 function animLoop() {
   frames++;
@@ -98,18 +99,22 @@ function animLoop() {
   draw();
   
   if (!gameover) {
-    requestAnimationFrame(animLoop);
+    raf = requestAnimationFrame(animLoop);
   }
 }
 
 function startGame() {
+  if (raf) {
+    cancelAnimationFrame(raf);
+  }
+
   gameover = false;
   points = 0;
 
   car = new Car();
   obstacles = [];
 
-  requestAnimationFrame(animLoop);
+  raf = requestAnimationFrame(animLoop);
 }
 
 document.getElementById("start-button").onclick = function() {
