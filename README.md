@@ -31,9 +31,9 @@ You should add your drawing instructions inside the `main.js` `function draw() {
 Once we have our road, we need the player´s car. On the `images` folder, you will find a `.png` file you should use for the player.
 
 You should use the `Car` class:
-- in the constructor, once image is loaded, assign `this.w`, `this.h`, `this.x` and `this.h`:
-  - `this.x` should be 100 units as width
-  - `this.h` should be computed thanks to `imgRatio` and `this.x`
+- in the constructor, once image is loaded, assign `this.w`, `this.h`, `this.x` and `this.y`:
+  - `this.w` should be 100 units as width
+  - `this.h` should be computed thanks to `imgRatio` and `this.w`
 - Then implement the `draw()` method
 
 Once our `Car` class is ready, in `main.js` don't forget to create a new car 🚗 when `startGame()`! Don't also forget to draw it !
@@ -43,6 +43,8 @@ Once our `Car` class is ready, in `main.js` don't forget to create a new car �
 In our game, the player will only be able to move the car to the right and left. Using `left` and `right` arrows, the player should be able to move the car.
 
 For that you should implement the 2 methods `moveLeft()` and `moveRight` of the `Car` class.
+
+NB: Use `document.onkeydown = function (e) {...}` already defined in `main.js` to detect the key pressed.
 
 :bulb: Remember the boundaries!
 
